@@ -1,0 +1,29 @@
+.MainPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.MainInput{
+    margin-top: 50px;
+    width: 650px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #000000;
+    border: 1px solid #3b3b3b;
+    color: white;
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.MainInput::placeholder{
+    opacity: 0.8;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.BitcoinImage{
+     margin-top: 80px;
+}
