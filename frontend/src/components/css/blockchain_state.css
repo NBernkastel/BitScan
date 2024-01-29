@@ -1,0 +1,25 @@
+.BlocksState{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.BlockchainState{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 140px;
+    margin-top: 80px;
+    background-color: #19191c;
+    border-radius: 12px;
+}
+
+.BlockchainState span{
+    color: white;
+    font-size: 28px;
+    font-family: Inter, monospace;
+}

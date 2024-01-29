@@ -20,10 +20,33 @@
 
 .MainInput::placeholder{
     opacity: 0.8;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    font-family: Inter, monospace;
 }
 
 .BitcoinImage{
      margin-top: 80px;
+}
+
+.MainPageButtons{
+    padding: 15px;
+}
+
+.MainPageButtons button{
+    margin-left: 10px;
+    width: 140px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background-color: #000000;
+    color: white;
+    font-family: Inter, monospace;
+    /*font-weight: bold;*/
+    font-size: 20px;
+}
+
+.MainPageButtons button:hover{
+    width: 145px;
+    height: 43px;
+    background-color: #11001f !important;
 }

@@ -1,0 +1,13 @@
+.CopyComponent{
+    color: white;
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+    width: 120px;
+    height: 40px;
+    background-color: #2a2a2d;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
