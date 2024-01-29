@@ -2,21 +2,20 @@ import React, {useState} from 'react';
 import './css/main_page.css'
 // @ts-ignore
 import bitcoinimage from "../images/bitcoin.png"
+import {Link} from "react-router-dom";
 function MainPage() {
     const [mainInput, setMainInput] = useState('')
 
     function check_address(e: React.ChangeEvent<HTMLInputElement>){
         let value = e.target.value
         setMainInput(value)
-        if (value.substring(0, 4) === "bc1q"){
-            const element = document.getElementById('BitcoinInput');
-            if (element)
+        const element = document.getElementById('BitcoinInput');
+        if (element) {
+            if (value.substring(0, 4) === "bc1q") {
                 element.style.border = '1px solid #3b3b3b'
-        }
-        else{
-            const element = document.getElementById('BitcoinInput');
-            if (element)
+            } else {
                 element.style.border = '1px solid red'
+            }
         }
     }
 
@@ -29,6 +28,11 @@ function MainPage() {
                onChange={e => check_address(e)}
                id={'BitcoinInput'}
         />
+        <div className={"MainPageButtons"}>
+            <button>Network</button>
+            <Link to="/blocks"><button>Blocks</button></Link>
+            <button>Transactions</button>
+        </div>
     </div>
   );
 }
