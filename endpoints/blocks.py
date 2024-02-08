@@ -10,7 +10,6 @@ blocks_router = APIRouter(prefix='/blocks', tags=['Blocks'])
 
 
 @blocks_router.get('/last_block_info')
-@cache(expire=30)
 def blockchain_height():
     last_block_info = {}
     height = str(blockexplorer.get_latest_block().height)

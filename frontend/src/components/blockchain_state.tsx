@@ -3,29 +3,31 @@ import './css/blockchain_state.css'
 import axios from 'axios'
 
 function BlockchainStateComponent() {
-    const [blochainstate, setblockchainstate] = useState({height: 0, time: ''})
+    const [blochain_state, setBlockchainstate] = useState({height: 0, time: ''})
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            axios.get('http://127.0.0.1:8000/blocks/last_block_info')
-                .then((response) => {
-                    setblockchainstate(response.data)
-                })
-                .catch((error) => {
-                    console.error('Error to get last block', error);
-                });
-        }, 10000);
-
-        return () => clearInterval(interval);
+        state_update()
     }, []);
+
+    function state_update() {
+        console.log('fgf')
+        axios.get('http://127.0.0.1:8000/blocks/last_block_info')
+            .then((response) => {
+                setBlockchainstate(response.data)
+            })
+            .catch((error) => {
+                console.error('Error to get last block', error);
+            })
+    }
 
     return (
         <div className="BlocksState">
             <div className={'BlockchainState'}>
+                <button className={'BlocksStateUpdateButton'} onClick={state_update}>🗘</button>
                 <span>Blockchain Height</span>
-                <span>{blochainstate.height}</span>
+                <span>{blochain_state.height}</span>
                 <span>Time from last block</span>
-                <span>{blochainstate.time}</span>
+                <span>{blochain_state.time}</span>
             </div>
         </div>
     );

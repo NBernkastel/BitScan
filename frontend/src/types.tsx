@@ -11,4 +11,13 @@ export type Transaction = {
     outputs: [{ value: number, address: string }]
 }
 
+export type BlockInfo = {
+    index: number
+    fee: number
+    time: string
+    transactions: number
+    size: number
+    hash: string
+}
+
 export type TransactionID = string

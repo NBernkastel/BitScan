@@ -57,3 +57,18 @@
 .index:hover {
     color: #0056b3;
 }
+
+.BlocksUpdateButton{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -65px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-size: 40px;
+    color: white;
+    border-radius: 40px;
+}
+
+.BlocksUpdateButton:hover{
+    background-color: rgba(0,0,0,0.5);
+}
