@@ -1,0 +1,53 @@
+.TransactionHeader {
+    width: 1200px;
+    height: 300px;
+    margin-top: 30px;
+    background-color: #121213;
+}
+
+.TransactionName {
+    color: white;
+    font-family: Inter, monospace;
+    margin: 20px 20px;
+}
+
+.TransactionName span {
+    color: #67b0ff;
+    cursor: pointer;
+}
+
+.LowDataHeader1 {
+    color: white;
+    font-family: Inter, monospace;
+    margin: 10px 20px;
+    width: 10px;
+}
+
+.LowDataHeader1 span {
+    /*margin-left: 100px;*/
+    color: #67b0ff;
+    cursor: pointer;
+}
+
+.LowDataHeader2 {
+    color: white;
+    font-family: Inter, monospace;
+    margin: -250px 30px 10px 500px;
+}
+
+.LowDataHeader2 span {
+    /*margin-left: 100px;*/
+    color: #67b0ff;
+    cursor: pointer;
+}
+
+.LowDataHeader2Time {
+    color: white;
+    font-family: Inter, monospace;
+    margin-left: 500px;
+}
+
+.LowDataHeader2Time span {
+    color: #67b0ff;
+    cursor: pointer;
+}

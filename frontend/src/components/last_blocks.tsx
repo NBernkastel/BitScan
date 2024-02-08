@@ -15,17 +15,6 @@ function LastBlocksComponent() {
                 {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
                 {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
                 {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
             ]
         )
 
