@@ -10,7 +10,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/blocks" element={<BlocksPage/>}/>
-                <Route path="/transaction" element={<TransactionPage/>}/>
+                <Route path="/transaction/:transactionID" element={<TransactionPage/>}/>
             </Routes>
         </div>
     );

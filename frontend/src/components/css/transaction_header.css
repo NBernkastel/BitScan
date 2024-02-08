@@ -32,11 +32,22 @@
 .LowDataHeader2 {
     color: white;
     font-family: Inter, monospace;
-    margin: -250px 20px 10px 500px;
+    margin: -250px 30px 10px 500px;
 }
 
 .LowDataHeader2 span {
     /*margin-left: 100px;*/
+    color: #67b0ff;
+    cursor: pointer;
+}
+
+.LowDataHeader2Time {
+    color: white;
+    font-family: Inter, monospace;
+    margin-left: 500px;
+}
+
+.LowDataHeader2Time span {
     color: #67b0ff;
     cursor: pointer;
 }

@@ -1,24 +1,29 @@
 import './css/transaction_IO.css'
+import {Transaction} from "../types";
 
-function TransactionIO() {
+function TransactionIO(props: { transaction: Transaction | null }) {
+
+    const {transaction} = props
 
 
     return (
         <div className="TransactionIO">
-            <div className={"InputColum"}>
-                <div className={'IName'}>24 inputs<span>458.43770063BTC</span></div>
-                <div className={'Input'}>39ERDaLPNAZWu1GpQ7q9PnFvZPT6Sge8Rv<span>384.18517270</span></div>
-                <div className={'Input'}>39ERDaLPNAZWu1GpQ7q9PnFvZPT6Sge8Rv<span>384.18517270</span></div>
-                <div className={'Input'}>39ERDaLPNAZWu1GpQ7q9PnFvZPT6Sge8Rv<span>384.18517270</span></div>
-                <div className={'Input'}>39ERDaLPNAZWu1GpQ7q9PnFvZPT6Sge8Rv<span>384.18517270</span></div>
-            </div>
-            <div className={"OutputColum"}>
-                <div className={'OName'}>2 outputs<span>458.43770063BTC</span></div>
-                <div className={'Output'}>39ERDaLPNAZWu1GpQ7q9PnFvZPT6Sge8Rv<span>384.18517270</span></div>
-                <div className={'Output'}>39ERDaLPNAZWu1GpQ7q9PnFvZPT6Sge8Rv<span>384.18517270</span></div>
-                <div className={'Output'}>39ERDaLPNAZWu1GpQ7q9PnFvZPT6Sge8Rv<span>384.18517270</span></div>
-                <div className={'Output'}>39ERDaLPNAZWu1GpQ7q9PnFvZPT6Sge8Rv<span>384.18517270</span></div>
-            </div>
+            {transaction && (
+                <>
+                    <div className={"InputColum"}>
+                        <div className={'IName'}>{transaction.inputs.length} inputs<span>{transaction.inputValue}</span></div>
+                        {transaction.inputs.map((inputB, index) => (
+                            <div className={'Input'} key={index}>{inputB.address}<span>{inputB.value}</span></div>
+                        ))}
+                    </div>
+                    <div className={"OutputColum"}>
+                        <div className={'OName'}>{transaction.outputs.length}<span>{transaction.outputValue}</span></div>
+                        {transaction.outputs.map((outputB, index) => (
+                            <div className={'Output'} key={index}>{outputB.address}<span>{outputB.value}</span></div>
+                        ))}
+                    </div>
+                </>
+            )}
         </div>
     )
 }
