@@ -1,4 +1,4 @@
-import './css/copy_component.css'
+import '../css/copy_component.css'
 function CopyComponent() {
 
     return (

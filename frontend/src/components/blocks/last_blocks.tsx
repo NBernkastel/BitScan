@@ -1,38 +1,27 @@
 import React, {useEffect, useState} from 'react';
-import './css/last_blocks.css'
+import '../css/last_blocks.css'
 import axios from 'axios'
-import CopyComponent from "./copy_not_component";
+import CopyComponent from "../utils/copy_not_component";
+import {BlockInfo} from "../../types";
 
 function LastBlocksComponent() {
-    const [Blocks, setBlocks] =
-        useState(
-            [
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-                {index: 0, fee: 0, time: '', transactions: 0, size: 0, hash: ''},
-            ]
-        )
+    const [Blocks, setBlocks] = useState<[BlockInfo] | null>(null)
 
     const [showCopy, setShowCopy] = useState(false)
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            axios.get('http://127.0.0.1:8000/blocks/last_blocks')
-                .then((response) => {
-                    setBlocks(response.data)
-                    console.log(response.data)
-                })
-                .catch((error) => {
-                    console.error('Error to get last block', error);
-                });
-        }, 10000);
-        return () => clearInterval(interval);
+        update_blocks_state()
     }, []);
+
+    function update_blocks_state() {
+        axios.get('http://127.0.0.1:8000/blocks/last_blocks')
+            .then((response) => {
+                setBlocks(response.data)
+            })
+            .catch((error) => {
+                console.error('Error to get last block', error);
+            })
+    }
 
 
     return (
@@ -41,6 +30,7 @@ function LastBlocksComponent() {
                 <div className={'LastBlocksCard'}>
                     <div className={'LastBlocksCardTopName'}>
                         <p>LAST MASTERCHAIN BLOCKS</p>
+                        <button className={'BlocksUpdateButton'} onClick={update_blocks_state}>🗘</button>
                     </div>
                     <table>
                         <thead>
@@ -54,7 +44,8 @@ function LastBlocksComponent() {
                         </tr>
                         </thead>
                         <tbody>
-                        {Blocks.map((block, index) => (
+
+                        {Blocks && Blocks.map((block, index) => (
                             <tr key={index}>
                                 <td className={'index'}>{block.index}</td>
                                 <td> {block.fee}</td>

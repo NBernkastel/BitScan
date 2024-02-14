@@ -1,0 +1,25 @@
+.BlockTransactions {
+    width: 1200px;
+    height: 400px;
+    margin-top: 30px;
+    background-color: #121213;
+}
+
+.DataBlockTransactions {
+    color: white;
+    font-family: Inter, monospace;
+    display: flex;
+    margin: 20px -140px;
+}
+
+.DataBlockTransactions span {
+    width: 150px;
+    margin-left: 70px;
+    text-align: right;
+}
+
+.SpanHash {
+    color: #67b0ff;
+    cursor: pointer;
+    margin-left: 30px;
+}

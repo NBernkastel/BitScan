@@ -22,8 +22,11 @@ function MainPage() {
     }
 
     const handleKeyDown = (event: { key: string; }) => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && mainInput.length > 12) {
             navigate(`/transaction/${mainInput}`)
+        }
+        if (event.key === 'Enter' && mainInput.length < 12) {
+            navigate(`/block/${mainInput}`)
         }
     };
 
@@ -32,7 +35,8 @@ function MainPage() {
             <img alt={'Bitcoin'} src={bitcoinimage} width={180} height={150} className={"BitcoinImage"}/>
             <input type={"text"}
                    className={"MainInput"}
-                   placeholder="Search Bitcoon addresses and transactions..." value={mainInput}
+                   placeholder="Search Bitcoon addresses and transactions..."
+                   value={mainInput}
                    onChange={e => check_address(e)}
                    id={'BitcoinInput'}
                    onKeyDown={handleKeyDown}

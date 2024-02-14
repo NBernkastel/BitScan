@@ -1,6 +1,6 @@
-import TransactionHeader from "../components/transaction_header";
+import TransactionHeader from "../components/transaction/transaction_header";
 import './css/transaction_page.css'
-import TransactionIO from "../components/transactions_io_component";
+import TransactionIO from "../components/transaction/transactions_io_component";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";

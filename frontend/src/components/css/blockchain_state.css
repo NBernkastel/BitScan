@@ -23,3 +23,18 @@
     font-size: 28px;
     font-family: Inter, monospace;
 }
+
+.BlocksStateUpdateButton{
+    position: absolute;
+    margin-left: 330px;
+    margin-bottom: 80px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-size: 40px;
+    color: white;
+    border-radius: 40px;
+}
+
+.BlocksStateUpdateButton:hover{
+    background-color: rgba(0,0,0,0.5);
+}

@@ -1,7 +1,12 @@
-import './css/transaction_header.css'
-import {Transaction, TransactionID} from "../types";
+import '../css/transaction_header.css'
+import {Transaction, TransactionID} from "../../types";
 
-function TransactionHeader(props: { transaction: Transaction | null; transactionID: TransactionID; }) {
+interface TransactionHeaderProps{
+    transaction: Transaction | null
+    transactionID: TransactionID
+}
+
+function TransactionHeader(props: TransactionHeaderProps) {
     const {transaction, transactionID} = props;
     return (
         <div className="TransactionHeader">
