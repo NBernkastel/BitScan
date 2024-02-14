@@ -1,7 +1,11 @@
-import './css/transaction_IO.css'
-import {Transaction} from "../types";
+import '../css/transaction_IO.css'
+import {Transaction} from "../../types";
 
-function TransactionIO(props: { transaction: Transaction | null }) {
+interface TransactionIO{
+    transaction: Transaction | null
+}
+
+function TransactionIO(props: TransactionIO) {
 
     const {transaction} = props
 

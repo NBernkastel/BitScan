@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './css/blockchain_state.css'
+import '../css/blockchain_state.css'
 import axios from 'axios'
 
 function BlockchainStateComponent() {
@@ -10,7 +10,6 @@ function BlockchainStateComponent() {
     }, []);
 
     function state_update() {
-        console.log('fgf')
         axios.get('http://127.0.0.1:8000/blocks/last_block_info')
             .then((response) => {
                 setBlockchainstate(response.data)

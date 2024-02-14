@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import './css/last_blocks.css'
+import '../css/last_blocks.css'
 import axios from 'axios'
-import CopyComponent from "./copy_not_component";
-import {BlockInfo} from "../types";
+import CopyComponent from "../utils/copy_not_component";
+import {BlockInfo} from "../../types";
 
 function LastBlocksComponent() {
     const [Blocks, setBlocks] = useState<[BlockInfo] | null>(null)

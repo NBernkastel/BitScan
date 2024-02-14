@@ -1,6 +1,6 @@
 import '../components/css/blockchain_state.css'
-import BlockchainStateComponent from "../components/blockchain_state";
-import LastBlocksComponent from "../components/last_blocks";
+import BlockchainStateComponent from "../components/blocks/blockchain_state";
+import LastBlocksComponent from "../components/blocks/last_blocks";
 
 function BlocksPage() {
 

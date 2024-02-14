@@ -20,4 +20,21 @@ export type BlockInfo = {
     hash: string
 }
 
+export type Block = {
+    index: number
+    fee: number
+    hash: string
+    time: string
+    transactions: [{"index":number,"hash":string,"time":number,"amount":number}]
+    size: number
+    version: number
+    bits: number
+    nonce: number
+    merkle_root: string
+    previous_hash: string
+    main_chain: boolean
+    reward: number
+}
+
 export type TransactionID = string
+export type BlockIndex = string
