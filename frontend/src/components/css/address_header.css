@@ -1,0 +1,33 @@
+.AddressHeader {
+    width: 900px;
+    height: 400px;
+    margin-top: 30px;
+    background-color: #121213;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.BitcoinAddress{
+    color: #67b0ff;
+    font-family: Inter, monospace;
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+.QR{
+    position: absolute;
+    margin-top: 90px;
+    margin-left: -500px;
+}
+
+.Balance{
+    position: absolute;
+    color: white;
+    font-family: Inter, monospace;
+    margin-top: 100px;
+    margin-left: 120px;
+    font-size: 25px;
+    height: 30px;
+}

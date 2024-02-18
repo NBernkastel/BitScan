@@ -22,8 +22,11 @@ function MainPage() {
     }
 
     const handleKeyDown = (event: { key: string; }) => {
-        if (event.key === 'Enter' && mainInput.length > 12) {
+        if (event.key === 'Enter' && mainInput.length > 40) {
             navigate(`/transaction/${mainInput}`)
+        }
+        if (event.key === 'Enter' && mainInput.length > 30 && mainInput.length < 40) {
+            navigate(`/address/${mainInput}`)
         }
         if (event.key === 'Enter' && mainInput.length < 12) {
             navigate(`/block/${mainInput}`)

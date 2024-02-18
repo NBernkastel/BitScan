@@ -4,20 +4,25 @@ import TransactionIO from "../components/transaction/transactions_io_component";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {Transaction, TransactionID} from "../types";
+import {FullTransaction, TransactionID} from "../types";
 
 function TransactionPage() {
     const {transactionID} = useParams<TransactionID>()
-    const [transaction, setTransaction] = useState<Transaction | null>(null)
+    const [transaction, setTransaction] = useState<FullTransaction | null>(null)
 
     useEffect(() => {
         if (typeof transactionID !== 'undefined') {
             axios.get(`http://127.0.0.1:8000/transactions/transaction/${transactionID}`)
                 .then(response => {
-                    setTransaction(response.data)
+                    let res: FullTransaction = response.data;
+                    if (parseInt(res.block_height) === -1) {
+                        res.block_height = "unconfirmed"
+                        res.confirmations = "unconfirmed"
+                    }
+                    setTransaction(res)
                 })
         }
-    }, [])
+    },[transactionID])
     if (transactionID) {
         return (
             <div className="TransactionPage">
