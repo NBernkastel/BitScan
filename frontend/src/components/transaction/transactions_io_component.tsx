@@ -1,29 +1,45 @@
 import '../css/transaction_IO.css'
-import {Transaction} from "../../types";
+import {FullTransaction} from "../../types";
+import {useNavigate} from "react-router-dom";
 
-interface TransactionIO{
-    transaction: Transaction | null
+interface TransactionIOProps {
+    transaction: FullTransaction | null
 }
 
-function TransactionIO(props: TransactionIO) {
+function TransactionIO(props: TransactionIOProps) {
 
     const {transaction} = props
-
+    const navigate = useNavigate();
 
     return (
         <div className="TransactionIO">
             {transaction && (
                 <>
-                    <div className={"InputColum"}>
-                        <div className={'IName'}>{transaction.inputs.length} inputs<span>{transaction.inputValue}</span></div>
+                    <div className={"IOColum"}>
+                        <div
+                            className={'IOName'}>{transaction.inputs.length} inputs<span>{transaction.inputValue}</span>
+                        </div>
                         {transaction.inputs.map((inputB, index) => (
-                            <div className={'Input'} key={index}>{inputB.address}<span>{inputB.value}</span></div>
+                            <div className={"IO"}>
+                                <div className={'OIAddress'} onClick={e => {
+                                    if (inputB.address !== "coinbase")
+                                    navigate(`/address/${inputB.address}`)
+                                    }
+                                }
+                                     key={index}>{inputB.address}</div>
+                                <span>{inputB.value}</span>
+                            </div>
                         ))}
                     </div>
-                    <div className={"OutputColum"}>
-                        <div className={'OName'}>{transaction.outputs.length}<span>{transaction.outputValue}</span></div>
+                    <div className={"IOColum"}>
+                        <div className={'IOName'}>{transaction.outputs.length}<span>{transaction.outputValue}</span>
+                        </div>
                         {transaction.outputs.map((outputB, index) => (
-                            <div className={'Output'} key={index}>{outputB.address}<span>{outputB.value}</span></div>
+                            <div className={"IO"}>
+                                <div className={'OIAddress'} onClick={e => navigate(`/address/${outputB.address}`)}
+                                     key={index}>{outputB.address}</div>
+                                <span>{outputB.value}</span>
+                            </div>
                         ))}
                     </div>
                 </>

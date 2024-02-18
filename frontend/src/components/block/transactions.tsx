@@ -1,22 +1,22 @@
 import "../css/block_transactions.css"
-import {Block} from "../../types";
 import {useNavigate} from "react-router-dom";
+import {Transaction} from "../../types";
 
-interface BlockHeaderProps {
-    block: Block | null
+interface TransactionProps {
+    transactions: [Transaction] | undefined
 }
 
-function BlockTransactions(props: BlockHeaderProps) {
-    const {block} = props;
+function Transactions(props: TransactionProps) {
+    const {transactions} = props;
     const navigate = useNavigate();
 
-    if (!block) {
+    if (!transactions) {
         return null
     }
 
     return (
         <div className="BlockTransactions">
-            {block.transactions.map((transaction, index) => (
+            {transactions.map((transaction, index) => (
                 <div className="DataBlockTransactions" key={index}>
                     <span>{transaction.index}</span>
                     <span>{transaction.time}</span>
@@ -28,4 +28,4 @@ function BlockTransactions(props: BlockHeaderProps) {
     );
 }
 
-export default BlockTransactions;
+export default Transactions;

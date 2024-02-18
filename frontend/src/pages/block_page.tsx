@@ -1,6 +1,6 @@
 import '../pages/css/block_page.css'
 import BlockHeader from "../components/block/block_header";
-import BlockTransactions from "../components/block/block_transactions";
+import BlockTransactions from "../components/block/transactions";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useParams} from "react-router-dom";
@@ -19,12 +19,12 @@ function BlockPage() {
                 })
         }
         console.log(Block)
-    }, [])
+    }, [Block, blockIndex])
     if (blockIndex) {
         return (
             <div className="BlockPage">
                 <BlockHeader block={Block}/>
-                <BlockTransactions block={Block}/>
+                <BlockTransactions transactions={Block?.transactions}/>
             </div>
         );
     } else {

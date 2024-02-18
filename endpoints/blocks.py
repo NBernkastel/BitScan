@@ -4,7 +4,7 @@ from blockchain import blockexplorer
 from fastapi import APIRouter
 from fastapi_cache.decorator import cache
 
-from utils.utils import seconds_to_hh_mm_ss
+from utils.utils import seconds_to_hh_mm_ss, satoshi_to_BTC
 import math
 blocks_router = APIRouter(prefix='/blocks', tags=['Blocks'])
 
@@ -29,7 +29,7 @@ def get_last_blocks():
         block = {}
         resp = blockexplorer.get_block(str(blockexplorer.get_latest_block().height - i))
         block['index'] = resp.block_index
-        block['fee'] = round(resp.fee * 10 ** -8, 2)
+        block['fee'] = round(satoshi_to_BTC(resp.fee), 2)
         block['hash'] = resp.hash
         block['time'] = str(datetime.utcfromtimestamp(resp.time))
         block['transactions'] = len(resp.transactions)
@@ -39,11 +39,12 @@ def get_last_blocks():
 
 
 @blocks_router.get('/block/{block}')
+@cache(expire=600)
 def get_block(block: str):
     block_info = {}
     block = blockexplorer.get_block(block)
     block_info['index'] = block.block_index
-    block_info['fee'] = block.fee * 10 ** -8
+    block_info['fee'] = satoshi_to_BTC(block.fee)
     block_info['hash'] = block.hash
     block_info['time'] = str(datetime.utcfromtimestamp(block.time))
     block_info['transactions_count'] = len(block.transactions)
@@ -62,7 +63,7 @@ def get_block(block: str):
             'index': i,
             'hash': transaction.hash,
             'time': transaction.time,
-            'amount': sum([x.value for x in transaction.inputs]) * 10**-8
+            'amount': satoshi_to_BTC(sum([x.value for x in transaction.inputs]))
         }
         i += 1
         transactions_info.append(trx)

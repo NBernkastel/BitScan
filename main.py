@@ -7,6 +7,7 @@ from fastapi_cache.backends.redis import RedisBackend
 from redis import asyncio as aioredis
 from starlette.middleware.cors import CORSMiddleware
 
+from endpoints.address import address_router
 from endpoints.blocks import blocks_router
 from endpoints.transactions import transactions_router
 
@@ -21,6 +22,7 @@ app.add_middleware(
 )
 app.include_router(blocks_router)
 app.include_router(transactions_router)
+app.include_router(address_router)
 
 @app.on_event("startup")
 async def startup():

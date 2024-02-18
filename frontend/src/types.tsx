@@ -1,6 +1,6 @@
-export type Transaction = {
+export type FullTransaction = {
     block_height: string
-    confirmations: number
+    confirmations: string
     size: number
     time: string
     type: string
@@ -9,6 +9,13 @@ export type Transaction = {
     fee: number
     inputs: [{ value: number, address: string }]
     outputs: [{ value: number, address: string }]
+}
+
+export type Transaction = {
+    index: number,
+    hash: string,
+    time: number,
+    amount: number
 }
 
 export type BlockInfo = {

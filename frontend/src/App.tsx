@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import BlocksPage from "./pages/blocks_page";
 import TransactionPage from "./pages/transaction_page";
 import BlockPage from "./pages/block_page";
+import AddressPage from "./pages/address_page";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/blocks" element={<BlocksPage/>}/>
                 <Route path="/transaction/:transactionID" element={<TransactionPage/>}/>
                 <Route path="/block/:blockIndex" element={<BlockPage/>}/>
+                <Route path="/address/:address" element={<AddressPage/>}/>
             </Routes>
         </div>
     );
