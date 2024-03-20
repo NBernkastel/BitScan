@@ -18,7 +18,6 @@ function BlockPage() {
                     setTransaction(response.data)
                 })
         }
-        console.log(Block)
     }, [Block, blockIndex])
     if (blockIndex) {
         return (

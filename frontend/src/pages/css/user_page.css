@@ -1,0 +1,12 @@
+.TRXNADDR {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.MarkedAndPrice{
+    display: flex;
+    flex-direction: row;
+}

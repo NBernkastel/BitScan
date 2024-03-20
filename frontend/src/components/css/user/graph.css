@@ -1,0 +1,46 @@
+.BitcoinGraph {
+    background-color: #141417;
+    width: 723px;
+    height: 287px;
+    margin-top: 20px;
+    margin-left: 50px;
+    border-radius: 12px;
+}
+
+.BitcoinGraphStats {
+    width: 30%;
+    height: 100%;
+}
+
+.BitcoinGraphStatsItem {
+    color: white;
+    font-family: Inter, monospace;
+    font-weight: bold;
+    font-size: 21px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+.BitcoinStatChange {
+    background-color: #284530;
+    width: 120px;
+    height: 33px;
+    margin-left: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BitcoinStatChange span {
+    font-size: 16px;
+    color: #289650;
+    font-weight: bold;
+}
+
+.UserBitcoinChart{
+    position: absolute;
+    top: 20px;
+    margin-left: 180px;
+}

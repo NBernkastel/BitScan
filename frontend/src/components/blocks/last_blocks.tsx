@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import '../css/last_blocks.css'
+import '../css/blockchain_state/last_blocks.css'
 import axios from 'axios'
 import CopyComponent from "../utils/copy_not_component";
 import {BlockInfo} from "../../types";
