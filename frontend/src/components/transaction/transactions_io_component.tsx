@@ -1,4 +1,4 @@
-import '../css/transaction_IO.css'
+import '../css/transaction/transaction_IO.css'
 import {FullTransaction} from "../../types";
 import {useNavigate} from "react-router-dom";
 

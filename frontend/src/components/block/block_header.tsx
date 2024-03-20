@@ -1,4 +1,4 @@
-import '../../components/css/block_header.css'
+import '../css/block/block_header.css'
 import {Block} from "../../types";
 
 interface BlockHeaderProps {

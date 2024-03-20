@@ -1,4 +1,4 @@
-import '../css/address_header.css'
+import '../css/address/address_header.css'
 import QRCode from 'react-qr-code';
 
 interface AddressHeaderProps {

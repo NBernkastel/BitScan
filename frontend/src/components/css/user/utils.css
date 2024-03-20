@@ -1,0 +1,67 @@
+.UserUtilsBody {
+    background-color: #141417;
+    width: 450px;
+    height: 500px;
+    margin-left: 40px;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.UserUtilsTitle {
+    color: white;
+    font-family: Inter, monospace;
+    font-weight: bold;
+    font-size: 21px;
+    margin-left: 50%;
+}
+
+.UserUtilsLine {
+    background-color: #17171A;
+    margin-top: 12px;
+    border-radius: 7px;
+    width: 95%;
+    margin-left: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Inter, sans-serif;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    height: 49px;
+}
+
+.UserUtilscheckbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.UserUtilscheckbox-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Inter, serif;
+}
+
+.UserUtilscheckmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #1D1D20;
+    border: 2px solid #141417;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 300px;
+}
+
+.UserUtilscheckbox-container input[type="checkbox"]:checked + .UserUtilscheckmark::after {
+    content: "✓";
+    font-size: 16px;
+    color: #00ff00;
+    position: absolute;
+    left: 4px;
+    top: 1px;
+}

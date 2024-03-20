@@ -1,0 +1,8 @@
+.GreenDote{
+    position: absolute;
+    margin-left: 5px;
+    background-color: #42FF00;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+}

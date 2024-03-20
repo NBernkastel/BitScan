@@ -1,4 +1,4 @@
-import "../css/block_transactions.css"
+import "../css/block/block_transactions.css"
 import {useNavigate} from "react-router-dom";
 import {Transaction} from "../../types";
 

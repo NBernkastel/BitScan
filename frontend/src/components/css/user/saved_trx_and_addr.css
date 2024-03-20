@@ -1,0 +1,61 @@
+.SavedTrxAndAddr {
+    margin-left: 20px;
+}
+
+
+.SavedTrxAndAddrTitle {
+    color: white;
+    margin-left: 38%;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: Inter, sans-serif;
+}
+
+.SavedTrxAndAddrBody {
+    background-color: #141417;
+    width: 647px;
+    height: 500px;
+    margin-top: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.SavedTrxAndAddrLine {
+    background-color: #17171A;
+    margin-top: 12px;
+    border-radius: 7px;
+    width: 97%;
+    margin-left: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Inter, sans-serif;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    height: 49px;
+}
+
+.SavedTrxAndAddrHash {
+    width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 20px;
+}
+
+.SavedTrxAndAddrTime {
+    width: 200px;
+    padding-left: 20px;
+}
+
+.SavedTrxAndAddrConformation {
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 20px;
+}

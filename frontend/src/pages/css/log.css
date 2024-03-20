@@ -1,0 +1,100 @@
+.Log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.LogCard {
+    width: 553px;
+    height: 516px;
+    background-color: #141417;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+}
+
+.LogUsername, .LogPassword, .LogRepeatPassword {
+    width: 85%;
+    height: 43px;
+    background-color: #1A1A1D;
+    border-radius: 12px;
+    margin-top: 21px;
+    border: none;
+    color: white;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+}
+
+.LogRepeatPassword::placeholder {
+    font-family: Inter, sans-serif;
+    padding-left: 15px
+}
+
+.LogUsername::placeholder {
+    font-family: Inter, sans-serif;
+    padding-left: 15px
+}
+
+.LogPassword::placeholder {
+    font-family: Inter, sans-serif;
+    padding-left: 15px
+}
+
+.LogName {
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    margin-top: 21px;
+    margin-bottom: 35px;
+}
+
+.LogEmail {
+    width: 85%;
+}
+
+.LogEmailInput {
+    width: 75%;
+    height: 43px;
+    background-color: #1A1A1D;
+    border-radius: 12px;
+    margin-top: 21px;
+    border: none;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+.LogEmailInput::placeholder {
+    font-family: Inter, sans-serif;
+    padding-left: 15px
+}
+
+.EmailSendButton {
+    margin-left: 5px;
+    background-color: #1A1A20;
+    border-radius: 12px;
+    height: 43px;
+    width: 108px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.LogSubmit {
+    width: 216px;
+    height: 43px;
+    background-color: #1A1A20;
+    border: none;
+    border-radius: 12px;
+    margin-top: 60px;
+    color: white;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}

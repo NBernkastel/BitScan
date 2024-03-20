@@ -1,4 +1,4 @@
-import '../css/transaction_header.css'
+import '../css/transaction/transaction_header.css'
 import {FullTransaction, TransactionID} from "../../types";
 import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";

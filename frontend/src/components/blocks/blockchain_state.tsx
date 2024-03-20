@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import '../css/blockchain_state.css'
+import '../css/blockchain_state/blockchain_state.css'
 import axios from 'axios'
 
 function BlockchainStateComponent() {
