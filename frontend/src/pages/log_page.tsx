@@ -1,35 +1,35 @@
 import {useParams} from "react-router-dom";
 import "../pages/css/log.css"
-import {useEffect, useState} from "react";
+import {MouseEvent, useState} from "react";
 import axios from "axios";
-import {useVisitorData} from "@fingerprintjs/fingerprintjs-pro-react";
-
+import Cookies from 'universal-cookie';
 
 function LogPage() {
 
     const {SignType} = useParams()
 
-    const [UserIn, SetUserIn] = useState({"login": "", "password": "", "finger_print": ""})
+    const [UserIn, SetUserIn] = useState({"username": "", "password": ""})
     const [UserUp, SetUserUp] = useState({"username": "", "email": "", "password": ""})
-    const {isLoading, error, data, getData} = useVisitorData(
-        {extendedResult: true},
-        {immediate: true}
-    )
 
-    function reg_user() {
+    function reg_user(e: MouseEvent) {
+        e.preventDefault();
         axios.post("http://localhost:8000/auth/register", UserUp)
             .then(res => {
             })
     }
 
-    function login_user() {
-        getData({ignoreCache: true}).then(r => {
-            SetUserIn(prev => {
-                return {...prev, finger_print: r.visitorId}
-            })
-        }).then(() => {
-            axios.post("http://localhost:8000/auth/login", UserIn).then(r => {})
+    function login_user(e: MouseEvent) {
+        e.preventDefault();
+        axios.post("http://localhost:8000/auth/token", new URLSearchParams(UserIn), {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
         })
+            .then(res => {
+                const cookies = new Cookies();
+                cookies.set('refreshToken', res.data.refresh_token)
+                cookies.set('access_token', res.data.refresh_token)
+            })
     }
 
     return (
@@ -48,10 +48,10 @@ function LogPage() {
                 {SignType === "in"
                     && <input className={"LogUsername"}
                               placeholder={"Username or email"}
-                              value={UserIn.login}
+                              value={UserIn.username}
                               onChange={e =>
                                   SetUserIn(prev => {
-                                      return {...prev, login: e.target.value}
+                                      return {...prev, username: e.target.value}
                                   })}/>}
                 {SignType === "up" && <div className={"LogEmail"}>
                     <input
@@ -81,8 +81,9 @@ function LogPage() {
                             SetUserUp(prev => {
                                 return {...prev, password: e.target.value}
                             })}/>}
-                {SignType === "up" && <button className={"LogSubmit"} onClick={reg_user}>submit</button>}
-                {SignType === "in" && <button className={"LogSubmit"} onClick={login_user}>submit</button>}
+                {SignType === "up" && <button type="submit" className={"LogSubmit"} onClick={e => reg_user(e)}>submit</button>}
+                {SignType === "in" &&
+                    <button type="submit" className={"LogSubmit"} onClick={e => login_user(e)}>submit</button>}
             </div>
         </div>
 
